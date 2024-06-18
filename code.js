@@ -1,10 +1,10 @@
 // 定数の定義
 const CONFIG = {
   webhookUrl:
-  "https://discord.com/api/webhooks/0000000000000000000/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA?wait=true&thread_id=0000000000000000000";
+    "https://discord.com/api/webhooks/0000000000000000000/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA?wait=true&thread_id=0000000000000000000",
   calendarId:
-  "a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@group.calendar.google.com";
-  username: "スケジュールを教えてくれるオラフ",  
+    "a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@group.calendar.google.com",
+  username: "スケジュールを教えてくれるオラフ",
   avatarUrl:
     "https://lumiere-a.akamaihd.net/v1/images/chara_olaf_42b28a03.jpeg",
   footerIconUrl:
