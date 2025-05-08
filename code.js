@@ -1,16 +1,37 @@
 // 定数の定義
+const scriptProperties = PropertiesService.getScriptProperties();
 const CONFIG = {
   webhookUrl:
-    "https://discord.com/api/webhooks/0000000000000000000/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA?wait=true&thread_id=0000000000000000000",
+    scriptProperties.getProperty("webhookUrl"),
   calendarId:
-    "a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@group.calendar.google.com",
-  username: "スケジュールを教えてくれるオラフ",
+    scriptProperties.getProperty("calendarId"),
+  username: 
+    scriptProperties.getProperty("username"),
   avatarUrl:
-    "https://lumiere-a.akamaihd.net/v1/images/chara_olaf_42b28a03.jpeg",
+    scriptProperties.getProperty("avatarUrl"),
   footerIconUrl:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/2048px-Google_Calendar_icon_%282020%29.svg.png",
-  mentionUsers: "<@000000000000000000>",
+    scriptProperties.getProperty("footerIconUrl"),
 };
+
+function setProperties() {
+  scriptProperties.setProperty(
+    "webhookUrl",
+    "https://discord.com/api/webhooks/0000000000000000000/qazwsxedcrfvtgbyhnujmik",
+  );
+  scriptProperties.setProperty(
+    "calendarId",
+    "00000000000000000000@group.calendar.google.com",
+  );
+  scriptProperties.setProperty(
+    "avatarUrl",
+    "https://example.com/image.webp",
+  );
+  scriptProperties.setProperty(
+    "footerIconUrl",
+    "https://www.example.com/image2.png",
+  );
+}
+
 
 // 時間を日本時間表記（HH:mm）に変換する関数
 function formatTime(date) {
@@ -98,7 +119,7 @@ function notifyTodaysSchedule() {
   if (events.length > 0) {
     const embeds = createEventEmbeds(events);
     sendNotification(
-      `${CONFIG.mentionUsers} 今日の予定をお知らせします。`,
+      `今日の予定をお知らせします。`,
       embeds,
     );
   }
@@ -123,7 +144,7 @@ function notifyNextSchedule() {
   if (events.length > 0) {
     const embeds = createEventEmbeds(events);
     sendNotification(
-      `${CONFIG.mentionUsers} 30分後の予定をお知らせします。`,
+      `30分後の予定をお知らせします。`,
       embeds,
     );
   }
